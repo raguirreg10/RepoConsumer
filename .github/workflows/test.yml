@@ -31,8 +31,9 @@ jobs:
       - name: Overwrite Env
         run: |
           TOLAN_CLONE_PATH=$(mktemp -d)
+          echo $TOLAN_CLONE_PATH
 
       - name: print env
-        run: echo ${{ env.TOLAN-DIR-PATH }} 
+        run: echo $TOLAN-DIR-PATH 
 
       
