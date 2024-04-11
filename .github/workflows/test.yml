@@ -29,11 +29,8 @@ jobs:
           ls -la TolanLab
 
       - name: Overwrite Env
-        uses: actions/github-script@v7
-        id: my-script
-        with: 
-          script: |
-            TOLAN_CLONE_PATH=(mktemp -d)
+        run: |
+          TOLAN-DIR-PATH = /test
 
       - name: print env
         run: echo ${{ env.TOLAN-DIR-PATH }} 
