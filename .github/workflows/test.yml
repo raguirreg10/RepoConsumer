@@ -1,10 +1,9 @@
 name: Repo Test
 
 on: push
-  inputs:
-    TOLAN_DIR_PATH:
-      description: 'Location of Tolan clone repo, if empty a temp dir will be created'
-      required: false
+
+env:
+  TOLAN_CLONE_PATH: ''
 
 jobs:
   Build:
@@ -20,4 +19,4 @@ jobs:
         run: ls -la
 
       - name: Print TolanLab path
-        run: echo ${{ inputs.TOLAN_DIR_PATH }} 
+        run: echo ${{ env.TOLAN-DIR-PATH }} 
