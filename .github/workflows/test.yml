@@ -9,7 +9,7 @@ jobs:
       - name: Clone another repo
         uses: actions/checkout@v4
         with:
-          repository: 'raguirreg10/DemoClase11'
+          repository: 'raguirreg10/PrivateRepo'
 
       - name: List files
         run: ls -la
