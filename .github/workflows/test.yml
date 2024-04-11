@@ -1,11 +1,10 @@
 name: Repo Test
 
-inputs:
-  TOLAN_DIR_PATH:
-    description: 'Location of Tolan clone repo, if empty a temp dir will be created'
-    required: false
-
 on: push
+  inputs:
+    TOLAN_DIR_PATH:
+      description: 'Location of Tolan clone repo, if empty a temp dir will be created'
+      required: false
 
 jobs:
   Build:
