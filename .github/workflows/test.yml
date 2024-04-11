@@ -30,7 +30,7 @@ jobs:
 
       - name: Overwrite Env
         run: |
-          TOLAN-DIR-PATH = /test
+          $TOLAN_CLONE_PATH = /test
 
       - name: print env
         run: echo ${{ env.TOLAN-DIR-PATH }} 
