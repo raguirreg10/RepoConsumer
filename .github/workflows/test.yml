@@ -10,6 +10,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: 'raguirreg10/PrivateRepo'
+          ssh-key: ${{ secrets.SSH_KEY }} 
 
       - name: List files
         run: ls -la
