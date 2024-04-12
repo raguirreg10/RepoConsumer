@@ -27,7 +27,6 @@ jobs:
 
       - name: Run Script
         run: |
-          cd $TOLAN_CLONE_PATH
-          python helloWorld.py
+          python $TOLAN_CLONE_PATH/src/helloWorld.py
 
       
