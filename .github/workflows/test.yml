@@ -3,7 +3,7 @@ name: Repo Test
 on: push
 
 env:
-  TOLAN_CLONE_PATH: ''
+  TOLAN_CLONE_PATH: './TolanLab/'
 
 jobs:
   Build:
@@ -16,14 +16,18 @@ jobs:
           ssh-key: ${{ secrets.SSK_KEY }} 
 
       - name: Download Tolan Code
-        if: env.TOLAN_CLONE_PATH == ''
         uses: actions/checkout@v4
         with:
-          path: TolanLab
+          path: ${{ env.TOLAN_CLONE_PATH }}
 
       - name: List files
         run: |
           ls -la
           ls -la TolanLab
+
+      - name: Run Script
+        run: |
+          cd $TOLAN_CLONE_PATH
+          python helloWorld.py
 
       
