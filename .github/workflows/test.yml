@@ -3,7 +3,7 @@ name: Repo Test
 on: push
 
 env:
-  TOLAN_CLONE_PATH: ''
+  TOLAN_CLONE_PATH: '/tmp/something'
 
 jobs:
   Build:
