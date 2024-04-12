@@ -3,22 +3,20 @@ name: Repo Test
 on: push
 
 env:
-  TOLAN_CLONE_PATH: '/tmp/something'
+  TOLAN_CLONE_PATH: ''
 
 jobs:
   Build:
     runs-on: ubuntu-latest
     steps:
-      - name: Clone another repo
+      - name: Clone Unity repo
         uses: actions/checkout@v4
         with:
           repository: 'raguirreg10/PrivateRepo'
           ssh-key: ${{ secrets.SSK_KEY }} 
 
-      - name: Print TolanLab path
-        run: echo ${{ env.TOLAN-DIR-PATH }} 
-
       - name: Download Tolan Code
+        if: env.TOLAN_CLONE_PATH == ''
         uses: actions/checkout@v4
         with:
           path: TolanLab
@@ -27,15 +25,5 @@ jobs:
         run: |
           ls -la
           ls -la TolanLab
-
-      - name: Overwrite Env
-        if: env.TOLAN_CLONE_PATH == ''
-        run: |
-          TOLAN_CLONE_PATH_TEMP=$(mktemp -d) 
-          echo $TOLAN_CLONE_PATH_TEMP
-          echo "TOLAN_CLONE_PATH=$TOLAN_CLONE_PATH_TEMP" >> $GITHUB_ENV
-
-      - name: print env
-        run: echo $TOLAN_CLONE_PATH
 
       
