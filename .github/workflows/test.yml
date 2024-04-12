@@ -4,7 +4,7 @@ on: push
 
 env:
   TOLAN_CLONE_PATH: './TolanLab/'
-  SCRIPT_BINARY: $TOLAN_CLONE_PATH/src/helloWorld.py
+  SCRIPT_BINARY: "$TOLAN_CLONE_PATH/src/helloWorld.py"
 
 jobs:
   Build:
