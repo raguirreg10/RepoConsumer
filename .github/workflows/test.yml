@@ -30,8 +30,7 @@ jobs:
 
       - name: Overwrite Env
         run: |
-          TOLAN_CLONE_PATH=$(mktemp -d)
-          echo $TOLAN_CLONE_PATH
+          TOLAN_CLONE_PATH=$(mktemp -d) >> $GITHUB_ENV
 
       - name: print env
         run: echo $TOLAN_CLONE_PATH
